@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Button to Open Link in Background</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Link in Background Tab</title>
 </head>
 <body>
-    <button onclick="openLinkInBackground()">Open Link in Background</button>
+    <button onclick="openInBackgroundTab('https://contactcenters.github.io/wac.github.io')">Open Link</button>
 
     <script>
-        function openLinkInBackground() {
-            window.open('https://contactcenters.github.io/wac.github.io', '_blank');
+        function openInBackgroundTab(url) {
+            var a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            var evt = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true,
+                ctrlKey: true // This simulates opening in a background tab
+            });
+            a.dispatchEvent(evt);
         }
     </script>
 </body>
