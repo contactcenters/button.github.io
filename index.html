@@ -1,12 +1,15 @@
-
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Title of the document</title>
-   </head>
-   <body>
-      <form action="https://contactcenters.github.io/wac.github.io" method="get" target="_blank">
-         <button type="submit">Click me</button>
-      </form>
-   </body>
+<head>
+    <title>Button to Open Link in Background</title>
+</head>
+<body>
+    <button onclick="openLinkInBackground()">Open Link in Background</button>
+
+    <script>
+        function openLinkInBackground() {
+            window.open('https://contactcenters.github.io/wac.github.io', '_blank');
+        }
+    </script>
+</body>
 </html>
